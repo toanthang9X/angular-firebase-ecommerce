@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  background-color: #FFF9F3;
+  &_logo {
+    font-size: 25px;
+    color: #EB6D20;
+    font-weight: 600;
+  }
+  &_search {
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+}
