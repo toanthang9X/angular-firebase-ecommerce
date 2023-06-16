@@ -1,0 +1,48 @@
+<div class="footer">
+  <div class="footer_infor">
+    <div class="footer_infor-left">
+      <div class="footer_infor-logo">E-commerce</div>
+      <span class="footer_infor-address">
+        Cricklewood,London NW2 6qg, Uk
+      </span>
+      <div class="footer_infor-media">
+        <img src="../../../assets/imgs/facebook.svg" alt=""/>
+        <img src="../../../assets/imgs/twitter.svg" alt=""/>
+        <img src="../../../assets/imgs/linkedin.svg" alt=""/>
+        <img src="../../../assets/imgs/dribbble.svg" alt=""/>
+      </div>
+    </div>
+    <div class="footer_infor-right">
+      <div *ngFor="let item of footer_infor">
+        <div class="footer_infor-title">
+          {{item.title}}
+        </div>
+        <div style="height: 20px;"></div>
+        <div *ngFor="let i of item.sub">
+          {{i}}
+          <div style="height: 8px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer_infor-more">
+    <div class="footer_infor-moreLeft">
+      © 2022 Commerce, Inc.
+    </div>
+    <div style="width: 100px;"></div>
+    <div class="footer_infor-moreRight">
+      <span class="">
+        Privacy policy
+      </span>
+      <span class="">
+        Terms of use
+      </span>
+      <span class="">
+        Cookies
+      </span>
+    </div>
+    <div class="scroll-top">
+      Scroll to top
+      <img src="../../../assets/imgs/Arrow_top.svg" alt="" />
+    </div>
+</div>

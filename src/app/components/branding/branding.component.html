@@ -1,0 +1,55 @@
+<div class="branding">
+  <div class="branding_item">
+    <div class="branding_item-title">
+      Clothing & Shoes
+    </div>
+    <img src="../../../assets/imgs/unsplash_mO-_iF_FkCk.jpg" alt="" />
+  </div>
+  <div class="branding_item">
+    <div class="branding_item-title">
+      Home & Living
+    </div>
+    <img src="../../../assets/imgs/unsplash_gDrUY7QUeng.jpg" alt="" />
+  </div>
+  <div class="branding_item">
+    <div class="branding_item-title">
+      Art & Collectibles
+    </div>
+    <img src="../../../assets/imgs/unsplash_q4LIvI9NN6Y.jpg" alt="" />
+  </div>
+</div>
+<div style="height: 20px;"></div>
+<div class="product_list">
+  <div *ngFor="let product of this.listProducts" class="product" [style.background-color]="product.backgroundColor">
+    <img src="../../../assets/imgs/Vector15.svg" alt="" class="product_icon-favourite" />
+    <img [src]="product.img || ''" alt="" class="product_img" />
+    <div>
+      Colors
+      <div style="height: 10px;"></div>
+      <div style="display: flex; gap: 5px; margin-left: 10px;">
+        <div *ngFor="let color of this.product.colors" class="color_product" [style.background-color]="color"></div>
+      </div>
+    </div>
+    <div style="height: 20px;"></div>
+    <div>
+      {{product.des}}
+    </div>
+    <div style="height: 25px;"></div>
+    <div style="font-weight: 600;">{{product.price}} $</div>
+  </div>
+</div>
+<div style="height: 20px;"></div>
+<div class="post_list">
+  <div *ngFor="let post of this.listPost" class="post" style="background-color: #F5F6F8;">
+    <div class="post_left">
+      <div class="post_title" style="min-height: 40px; max-width: 180px;">{{post.title}}</div>
+      <div style="height: 20px;"></div>
+      <div class="post_des">{{post.des}}</div>
+    </div>
+    <div class="post_right">
+      <div class="post_img">
+        <img [src]="post.img" alt="" />
+      </div>
+    </div>
+  </div>
+</div>

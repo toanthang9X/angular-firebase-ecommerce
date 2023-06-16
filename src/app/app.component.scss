@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: #FFF9F3;
+}
+.text {
+  display: flex;
+  justify-content: center;
+  background-color: #F5F6F8;
+  padding: 20px 0;
+}
+.content,
+.footerForm,
+.footer {
+  display: flex;
+  justify-content: center;
+}

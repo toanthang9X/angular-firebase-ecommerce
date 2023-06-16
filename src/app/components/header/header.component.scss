@@ -1,6 +1,10 @@
 .header {
+  width: 1100px;
+  padding: 10px;
   display: flex;
-  background-color: #FFF9F3;
+  justify-content: space-around;
+  align-items: center;
+  // background-color: #FFF9F3;
   &_logo {
     font-size: 25px;
     color: #EB6D20;
@@ -9,6 +13,89 @@
   &_search {
     padding: 5px;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    &-input {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  &_select {
+    height: 40px;
+    padding: 0px 10px;
+    color: #4e4e4e;
+    border: none;
+    background-color: #F5F6F8;
+    border-radius: 20px;
+  }
+  &_btn {
+    &-help {
+      padding: 10px 20px;
+      background-color: #EB6D20;
+      color: #fff;
+      border-radius: 20px;
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+    &-account {
+      padding: 10px;
+      display: flex;
+      color: #4e4e4e;
+      gap: 5px;
+      align-items: center;
+      border-radius: 20px;
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+    &-shopping {
+      padding: 10px;
+      display: flex;
+      color: #4e4e4e;
+      align-items: center;
+      border-radius: 20px;
+      gap: 5px;
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+  }
+  &_category {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    &-textSelected {
+      color: #EB6D20;
+    }
+    &-selected {
+      width: 35px;
+      height: 4px;
+      background-color: #EB6D20;
+      border-radius: 10px;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+.inputSearch {
+  padding: 10px;
+  min-width: 350px;
+  border: none;
+  border-bottom: 1px solid transparent;
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid #ccc;
   }
 }

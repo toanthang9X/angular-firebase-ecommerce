@@ -1,0 +1,24 @@
+.header {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  &_category {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    &-textSelected {
+      color: #EB6D20;
+    }
+    &-selected {
+      width: 35px;
+      height: 4px;
+      background-color: #EB6D20;
+      border-radius: 10px;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
