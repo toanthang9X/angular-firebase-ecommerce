@@ -23,5 +23,8 @@ export class FooterRelatedInforComponent {
       title: 'Help',
       sub: ['Help Center', 'Trust and safety', 'Privacy settings'],
     }
-  ]
+  ];
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

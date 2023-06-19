@@ -1,28 +1,39 @@
 <div class="header">
-  <div class="header_logo">E-commerce</div>
-  <div class="header_search">
-    <select [(ngModel)]="selectedOption" class="header_select">
-      <option value="allCategories">All Categories</option>
-      <option value="clothingShoes">Clothing & Shoes</option>
-      <option value="homeLiving">Home & Living</option>
-      <option value="weddingParty">Wedding & Party</option>
-      <option value="toysEntertainment">Toys & Entertainment</option>
-      <option value="artCollectibles">Art & Collectibles</option>
-      <option value="craftSuppliesTools">Craft Supplies & Tools</option>
-    </select>
-    <div class="header_search-input">
-      <input placeholder="Search anything" class="inputSearch">
-      <img src="../../../assets/imgs/Search_alt_duotone_line.png" alt="">
+  <div class="block1">
+    <div class="header_logo">E-commerce</div>
+  </div>
+  <div class="block2">
+    <div class="menuLaptop">
+      <img src="../../../assets/icons/Sort.svg" alt="">
+    </div>
+    <div class="header_search">
+      <select [(ngModel)]="selectedOption" class="header_select hidden">
+        <option value="allCategories">All Categories</option>
+        <option value="clothingShoes">Clothing & Shoes</option>
+        <option value="homeLiving">Home & Living</option>
+        <option value="weddingParty">Wedding & Party</option>
+        <option value="toysEntertainment">Toys & Entertainment</option>
+        <option value="artCollectibles">Art & Collectibles</option>
+        <option value="craftSuppliesTools">Craft Supplies & Tools</option>
+      </select>
+      <div class="header_search-input">
+        <input placeholder="Search anything" class="inputSearch">
+        <img src="../../../assets/imgs/Search_alt_duotone_line.png" alt="">
+      </div>
     </div>
   </div>
-  <div class="header_btn-help">Help</div>
-  <div class="header_btn-account">
-    <img src="../../../assets/imgs/User.svg" alt="">
-    Account
-  </div>
-  <div class="header_btn-shopping">
-    <img src="../../../assets/imgs/Bag_alt.svg" alt="">
-    Shopping
+  <div class="block3">
+    <div class="header_btn-help hidden">
+      Help
+    </div>
+    <div class="header_btn-account">
+      <img src="../../../assets/imgs/User.svg" alt="">
+      Account
+    </div>
+    <div class="header_btn-shopping">
+      <img src="../../../assets/imgs/Bag_alt.svg" alt="">
+      Shopping
+    </div>
   </div>
 </div>
 <app-header-category [categories]="categories"></app-header-category>

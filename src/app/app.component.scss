@@ -9,9 +9,41 @@
   background-color: #F5F6F8;
   padding: 20px 0;
 }
-.content,
-.footerForm,
+.content{
+  justify-content: center;
+  display: flex;
+  &_container {
+    width: 1100px;
+  }
+}
 .footer {
   display: flex;
   justify-content: center;
+}
+.footerForm {
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .maxWidth {
+    width: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .maxWidth {
+    width: auto;
+  }
+  .content{
+    justify-content: center;
+    display: flex;
+    &_container {
+      width: auto;
+    }
+  }
+  .footerForm {
+    padding: 8px;
+  }
 }

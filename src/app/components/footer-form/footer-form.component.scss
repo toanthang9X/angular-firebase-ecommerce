@@ -1,3 +1,6 @@
+.hiddenCurr {
+  display: none;
+}
 .footer_form {
   width: 1100px;
   background-color: #5959D9;
@@ -7,8 +10,6 @@
   &-submit {
     display: flex;
     justify-content: center;
-    // flex-direction: column;
-    // align-items: center;
   }
   &-input {
     display: flex;
@@ -54,4 +55,42 @@
 }
 .container {
   padding: 0 150px;
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .footer_form {
+    width: auto;
+    &-input {
+      min-width: auto;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .footer_form {
+    padding: 0;
+    width: auto;
+    &-input {
+      min-width: auto;
+    }
+    &-btn {
+      justify-content: center;
+      padding: 8px;
+    }
+    &-input {
+      width: 100%;
+    }
+    &-title {
+      font-size: 18px;
+    }
+  }
+  .container {
+    padding: 25px;
+  }
+  .hidden {
+    display: none;
+  }
+  .hiddenCurr {
+    display: block;
+  }
 }

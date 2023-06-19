@@ -4,10 +4,15 @@
   justify-content: space-around;
   align-items: center;
   &_category {
+    flex-wrap: wrap;
+    gap: 20px;
     cursor: pointer;
     display: flex;
-    justify-content: space-around;
-    padding: 10px;
+    // justify-content: space-around;
+    padding: 10px 40px;
+    &-container {
+      min-width: 150px;
+    }
     &-textSelected {
       color: #EB6D20;
     }
