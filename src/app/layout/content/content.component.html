@@ -1,14 +1,15 @@
-<app-branding></app-branding>
-<div style="height: 20px;"></div>
-<div class="product_list">
-  <div *ngFor="let product of this.listProducts" class="product">
-    <img src="../../../assets/imgs/Vector15.svg" alt="" class="product_icon-favourite" />
-    <img [src]="product.img || ''" alt="" class="product_img" />
-    <div style="height: 20px;"></div>
-    <div>
-      {{product.des}}
-    </div>
-    <div style="height: 25px;"></div>
-    <div style="font-weight: 600;">{{product.price}} $</div>
+<div class="header">
+  <app-header></app-header>
+</div>
+<div class="content">
+  <div class="content_container">
+    <router-outlet></router-outlet>
   </div>
+</div>
+<div class="footerForm">
+  <app-footer-form></app-footer-form>
+</div>
+<div class="text">Commerce, is powered by 100% renewable electricity.</div>
+<div class="footer">
+  <app-footer-related-infor></app-footer-related-infor>
 </div>

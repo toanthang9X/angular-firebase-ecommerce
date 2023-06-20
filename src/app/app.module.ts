@@ -17,6 +17,7 @@ import { BrandingComponent } from './components/branding/branding.component';
 import { MostPopularComponent } from './components/most-popular/most-popular.component';
 import { ProductItemComponent } from './components/product-item/product-item.component';
 import { NormalProductComponent } from './components/normal-product/normal-product.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NormalProductComponent } from './components/normal-product/normal-produ
     BrandingComponent,
     MostPopularComponent,
     ProductItemComponent,
-    NormalProductComponent
+    NormalProductComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserAnimationsModule,

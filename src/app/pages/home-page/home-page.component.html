@@ -1,0 +1,14 @@
+<app-branding></app-branding>
+<div style="height: 20px;"></div>
+<div class="product_list">
+  <div *ngFor="let product of this.listProducts" class="product">
+    <img src="../../../assets/imgs/Vector15.svg" alt="" class="product_icon-favourite" />
+    <img [src]="product.img || ''" alt="" class="product_img" />
+    <div style="height: 20px;"></div>
+    <div>
+      {{product.des}}
+    </div>
+    <div style="height: 25px;"></div>
+    <div style="font-weight: 600;">{{product.price}} $</div>
+  </div>
+</div>
