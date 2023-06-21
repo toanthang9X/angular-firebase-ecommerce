@@ -1,0 +1,38 @@
+.login {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &_form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    &-txt {
+      color: #EB6D20;
+    }
+    &-title {
+      font-weight: 600;
+      font-size: 25px;
+      color: #EB6D20;
+      text-transform: uppercase;
+    }
+    &-input {
+      input {
+        padding: 10px;
+        min-width: 250px;
+      }
+    }
+    &-submit {
+      input {
+        padding: 10px;
+        width: 100%;
+        cursor: pointer;
+        text-transform: uppercase;
+        background-color: #EB6D20;
+        color: #fff;
+        border: #EB6D20;
+      }
+    }
+  }
+}

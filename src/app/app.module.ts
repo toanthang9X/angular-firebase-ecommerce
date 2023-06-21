@@ -18,6 +18,9 @@ import { MostPopularComponent } from './components/most-popular/most-popular.com
 import { ProductItemComponent } from './components/product-item/product-item.component';
 import { NormalProductComponent } from './components/normal-product/normal-product.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { BlankComponent } from './layout/blank/blank.component';
+import { SignInComponent } from './pages/sign-in/sign-in.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     MostPopularComponent,
     ProductItemComponent,
     NormalProductComponent,
-    HomePageComponent
+    HomePageComponent,
+    BlankComponent,
+    SignInComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserAnimationsModule,

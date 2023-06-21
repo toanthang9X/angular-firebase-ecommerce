@@ -1,0 +1,20 @@
+.notFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &_img {
+    img {
+      width: 350px;
+      height: 350px;
+    }
+  }
+  &_title {
+    text-transform: uppercase;
+    color: #4A7BFC;
+    font-size: 30px;
+  }
+  &_des {
+    color: #51618a;
+  }
+}
