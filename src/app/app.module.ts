@@ -37,7 +37,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     HomePageComponent,
     BlankComponent,
     SignInComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserAnimationsModule,
