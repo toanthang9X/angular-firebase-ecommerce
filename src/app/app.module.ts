@@ -21,6 +21,10 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { BlankComponent } from './layout/blank/blank.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+import { CategoryService } from './services/category.service';
 
 @NgModule({
   declarations: [
@@ -47,8 +51,10 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     AppRoutingModule,
     FormsModule,
     MatIconModule,
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideFirestore(() => getFirestore()),
   ],
-  providers: [],
+  providers: [CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
