@@ -5,11 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'angular-firebase-ecommerce';
   sliderURL = '../assets/imgs/bgIMG.png';
-
-  ngOnInit(): void {
-    console.log('a1');
-  }
 }

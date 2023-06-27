@@ -24,14 +24,16 @@ export class CategoryService {
     this._item$ = collectionData(this.prodCat, {
       idField: 'idDoc'
     }) as Observable<Category[]>;
-    this._item$.forEach((a: any) => console.log(a, 5)
-    )
+    // this._item$.forEach((a: any) => console.log(a, 5)
     this._item$.pipe(
       map((val) => of(val)),
       concatAll()
     ).subscribe(it => {
-      console.log(it)
+      // console.log(it)
       this.item$.next(it);      
     })
+  }
+  get category$() {
+    return this.item$.asObservable();
   }
 }
