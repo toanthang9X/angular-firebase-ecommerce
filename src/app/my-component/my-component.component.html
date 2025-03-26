@@ -1,0 +1,141 @@
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  .section {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+  }
+  .section h3 {
+    margin-top: 0;
+  }
+  .highlight {
+    background: #f4f4f4;
+    padding: 5px;
+    border-radius: 3px;
+  }
+  ul {
+    padding-left: 20px;
+  }
+</style>
+
+<div class="section">
+  <h3>Create component</h3>
+  ng generate component child<br/>
+  ng g c child<br/>
+  ng g c components/child<br/>
+  ng g c pages/child<br/>
+</div>
+
+<div class="section">
+  <h3>Interpolation</h3>
+  <p [innerHTML]="'Interpolation ({{ value }})'"></p>
+</div>
+
+<div class="section">
+  <h3>Property Binding</h3>
+  <p class="highlight">[value]="data"</p>
+  <h3>Current customer: {{ currentCustomer }}</h3>
+</div>
+
+<div class="section">
+  <h3>Event Binding</h3>
+  <button type="button" [disabled]="isUnchanged">Disabled Button</button>
+  <button type="button" (click)="onClick()">Click</button>
+</div>
+
+<div class="section">
+  <h3>Structural Directives</h3>
+  <p class="highlight">*ngIf, *ngFor, *ngSwitch</p>
+  
+  <p *ngIf="isUnchanged">Nội dung này sẽ hiển thị nếu isUnchanged = true</p>
+  <p *ngIf="isUnchanged; else loggedOut">Bạn đã đăng nhập!</p>
+  <ng-template #loggedOut>
+    <p>Bạn chưa đăng nhập!</p>
+  </ng-template>
+
+  <ng-container *ngIf="isUnchanged; then loadingBlock; else dataBlock"></ng-container>
+  <ng-template #loadingBlock><p>Đang tải...</p></ng-template>
+  <ng-template #dataBlock><p>Dữ liệu đã tải!</p></ng-template>
+</div>
+
+<div class="section">
+  <h3>*ngFor Examples</h3>
+  <p *ngIf="items.length > 0">Danh sách có {{ items.length }} mục!</p>
+  <ul>
+    <li *ngFor="let item of items">{{ item }}</li>
+  </ul>
+  <ul>
+    <li *ngFor="let item of items; let i = index">#{{ i + 1 }} - {{ item }}</li>
+  </ul>
+  <ul>
+    <li *ngFor="let item of items; let isFirst = first; let isLast = last">
+      <span *ngIf="isFirst">🔹</span>
+      <span *ngIf="isLast">🔻</span>
+      {{ item }}
+    </li>
+  </ul>
+  <ul>
+    <li *ngFor="let item of newItems; trackBy: trackById">{{ item.name }}</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h3>ngSwitch Example</h3>
+  <div *ngFor="let item of orders">
+    <div [ngSwitch]="item.status">
+      <p *ngSwitchCase="'pending'">⏳ Đang xử lý...</p>
+      <p *ngSwitchCase="'shipped'">✅ Hoàn thành!</p>
+      <p *ngSwitchCase="'delivered'">❌ Lỗi!</p>
+      <p *ngSwitchDefault>⚠️ Trạng thái không xác định!</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Attribute Directives</h3>
+  <p class="highlight">ngClass, ngStyle</p>
+</div>
+
+<div class="section">
+  <h3>Pipes (Định dạng dữ liệu)</h3>
+  <p class="highlight">{{ price | currency }}</p>
+  <p class="highlight">{{ date | date:'short' }}</p>
+</div>
+
+<div class="section">
+  <app-child
+    [data]="'Hello từ Parent!'"
+    (messageEvent)="receiveMessage($event)"
+  ></app-child>
+  <p>📩 Tin nhắn từ Child: {{ receivedMessage }}</p>
+</div>
+<div class="section">
+  <h3>
+    Service & Dependency Injection
+  </h3>
+  Tạo service để chia sẻ dữ liệu giữa các component:<br/>
+  <p class="highlight">
+    ng generate service my-service<br/>
+    ng g s services/my-service
+  </p>
+  Sử dụng RxJS BehaviorSubject để chia sẻ state giữa component.
+</div>
+<div class="section">
+  <h3>Service Example</h3>
+  <p>Message from Service: {{ message }}</p>
+  <button (click)="sendMessage()">Send Message to Child</button>
+</div>
+<div class="section">
+  <h3>Forms & Validation</h3>
+  <app-form-validation></app-form-validation>
+</div>
+<div class="section">
+  <h3>Điều hướng</h3>
+  <a routerLink="/">Trang Chủ</a><br/>
+  <a routerLink="/practices">Giới Thiệu</a><br/>
+  <button (click)="goToHome()">go home page</button>
+</div>

@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { HeaderCategoryComponent } from './components/header-category/header-category.component';
 import { FooterFormComponent } from './components/footer-form/footer-form.component';
@@ -26,6 +26,9 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from '../environments/environment.prod';
 import { CategoryService } from './services/category.service';
 import { ProductService } from './services/product.service';
+import { MyComponentComponent } from './my-component/my-component.component';
+import { ChildComponent } from './my-component/child/child.component';
+import { FormValidationComponent } from './my-component/form-validation/form-validation.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +46,9 @@ import { ProductService } from './services/product.service';
     BlankComponent,
     SignInComponent,
     NotFoundComponent,
+    MyComponentComponent,
+    ChildComponent,
+    FormValidationComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -52,6 +58,7 @@ import { ProductService } from './services/product.service';
     AppRoutingModule,
     FormsModule,
     MatIconModule,
+    ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
   ],

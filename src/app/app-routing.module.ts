@@ -5,6 +5,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { BlankComponent } from './layout/blank/blank.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { MyComponentComponent } from './my-component/my-component.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'home'},
@@ -31,6 +32,10 @@ const routes: Routes = [
         component: SignInComponent,
       }
     ]
+  },
+  {
+    path: 'practices',
+    component: MyComponentComponent,
   },
   {
     path: '**',

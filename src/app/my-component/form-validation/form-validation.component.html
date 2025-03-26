@@ -1,0 +1,30 @@
+<div class="section">
+  <h4>
+    Reactive Forms (FormGroup & FormControl)
+  </h4>
+  <form
+    [formGroup]="userForm"
+    (ngSubmit)="onSubmit()"
+    style="border: 1px solid #000; padding: 10px; display: inline-block;"
+  >
+    <label for="name">Họ và tên:</label>
+    <div>
+      <input type="text" id="name" formControlName="name">
+    </div>
+    <div *ngIf="name?.invalid && name?.touched">
+      <small *ngIf="name?.errors?.['required']">Tên là bắt buộc.</small>
+      <small *ngIf="name?.errors?.['minlength']">Tên phải có ít nhất 3 ký tự.</small>
+    </div>
+  
+    <label for="email">Email:</label>
+    <div>
+      <input type="email" id="email" formControlName="email">
+    </div>
+    <div *ngIf="email?.invalid && email?.touched">
+      <small *ngIf="email?.errors?.['required']">Email là bắt buộc.</small>
+      <small *ngIf="email?.errors?.['email']">Email không hợp lệ.</small>
+    </div>
+  
+    <button type="submit" [disabled]="userForm.invalid">Gửi</button>
+  </form>
+</div>
