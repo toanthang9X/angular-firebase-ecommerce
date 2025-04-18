@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { GlobalService } from '../services/global.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-my-component',
@@ -36,7 +37,7 @@ export class MyComponentComponent {
     this.receivedMessage = message; // Nhận dữ liệu từ Child
   }
 
-  constructor(private globalService: GlobalService, private router: Router) {}
+  constructor(private globalService: GlobalService, private router: Router, private authService: AuthService) {}
   message: string = '';
   ngOnInit() {
     // Lắng nghe thay đổi từ Service
@@ -50,5 +51,15 @@ export class MyComponentComponent {
   // router
   goToHome() {
     this.router.navigate(['/home']);
+  }
+
+  // call api
+  email = '';
+  password = '';
+  login() {
+    this.authService.login(this.email, this.password).subscribe({
+      next: () => alert('Đăng nhập thành công!'),
+      error: (err) => alert('Đăng nhập thất bại: ' + err.message),
+    });
   }
 }

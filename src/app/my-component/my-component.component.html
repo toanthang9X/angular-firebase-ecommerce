@@ -139,3 +139,11 @@
   <a routerLink="/practices">Giới Thiệu</a><br/>
   <button (click)="goToHome()">go home page</button>
 </div>
+<div class="section">
+  <div class="login-form">
+    <h2>Đăng nhập</h2>
+    <input type="text" [(ngModel)]="email" placeholder="Tên đăng nhập">
+    <input type="password" [(ngModel)]="password" placeholder="Mật khẩu">
+    <button (click)="login()">Đăng nhập</button>
+  </div>
+</div>

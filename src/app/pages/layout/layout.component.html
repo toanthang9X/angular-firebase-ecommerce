@@ -1,0 +1,71 @@
+<div class="layout-container">
+  <div class="header">
+    <div class="header-info">
+      <div class="header-info-container">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="mail"
+          fontIcon="mail"
+          class="header-icon"
+        ></mat-icon>
+        <span>toan8thang@gmail.com</span>
+      </div>
+      <div class="header-info-container">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Example home icon"
+          fontIcon="phone"
+          class="header-icon"
+        ></mat-icon>
+        <span>+8475484441</span>
+      </div>
+    </div>
+    <div class="header-action">
+      <div class="header-action-container">
+        <button [matMenuTriggerFor]="menu" class="header-action-btn">English</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>English</button>
+          <button mat-menu-item>Vietnamese</button>
+        </mat-menu>
+      </div>
+      <div class="header-action-container">
+        <button [matMenuTriggerFor]="menuUnit" class="header-action-btn">USD</button>
+        <mat-menu #menuUnit="matMenu">
+          <button mat-menu-item>USD</button>
+          <button mat-menu-item>VND</button>
+        </mat-menu>
+      </div>
+      <div class="header-action-container">
+        <button class="header-action-btn">
+          Login
+          <mat-icon
+            aria-hidden="false"
+            aria-label="mail"
+            fontIcon="person"
+            class="header-icon"
+          ></mat-icon>
+        </button>
+      </div>
+      <div class="header-action-container">
+        <button class="header-action-btn">
+          Wishlist
+          <mat-icon
+            aria-hidden="false"
+            aria-label="mail"
+            fontIcon="favorite"
+            class="header-icon"
+          ></mat-icon>
+        </button>
+      </div>
+      <div class="header-action-container">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="mail"
+          fontIcon="shopping_cart_checkout"
+          class="header-icon"
+        ></mat-icon>
+      </div>
+    </div>
+  </div>
+  <ng-content></ng-content>  <!-- Nơi chứa nội dung thay đổi -->
+</div>

@@ -29,6 +29,13 @@ import { ProductService } from './services/product.service';
 import { MyComponentComponent } from './my-component/my-component.component';
 import { ChildComponent } from './my-component/child/child.component';
 import { FormValidationComponent } from './my-component/form-validation/form-validation.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthInterceptor } from './services/auth.interceptor.service';
+import { LayoutComponent } from './pages/layout/layout.component';
+import { MaterialModule } from './shared/material.module';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -49,6 +56,7 @@ import { FormValidationComponent } from './my-component/form-validation/form-val
     MyComponentComponent,
     ChildComponent,
     FormValidationComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -59,10 +67,19 @@ import { FormValidationComponent } from './my-component/form-validation/form-val
     FormsModule,
     MatIconModule,
     ReactiveFormsModule,
+    HttpClientModule,// Import module để dùng HttpClient
+    MaterialModule,
+    MatSidenavModule,
+    MatMenuModule,
+    MatButtonModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
   ],
-  providers: [CategoryService, ProductService],
+  providers: [
+    CategoryService,
+    ProductService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
